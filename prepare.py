@@ -3,7 +3,6 @@ import seaborn as sns
 import os
 
 df = sns.load_dataset('diamonds')
-# Удаляем строки с нулевыми размерами (выбросы)
 df = df[(df[['x','y','z']] != 0).all(axis=1)]
 df = df.dropna()
 os.makedirs('data', exist_ok=True)
